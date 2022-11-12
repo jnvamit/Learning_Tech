@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <p>Home Page</p>
+    <p>Hello, I am on the home page associated with second tutorial</p>
+
+    <!-- printing the value passed via the content -->
+    <p>{{content}}</p>
+
+    <!-- printing the value of r -->
+    <p>{{r}}</p>
+
+    <!-- code for for-loop -->
+    {% for x in range(10) %}
+        {% if x % 2 == 1 %}
+            <p> {{x}} </p>
+        {% endif %} 
+    {% endfor %}    
+    
+    <!-- printing the content of passed list  -->
+    <p>{{list}}</p>
+
+    <!-- printing the content of the list using for-loop -->
+    {% for x in list %}
+            <p> {{x}} </p> 
+    {% endfor %} 
+
+</body>
+</html>

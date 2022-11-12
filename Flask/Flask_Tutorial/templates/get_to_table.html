@@ -1,0 +1,454 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+    th{ 
+        color:#fff;
+            }
+</style>
+
+
+<table class="table table-striped">
+    <tr  class="bg-info">
+        <th>OS_Type</th>
+        <th>Date_And_Time</th>
+        <th>Endpoint_Name</th>
+        <th>User_Name</th>
+        <th>Software_Name</th>
+        <th>Activity</th>
+        <th>id</th>
+
+    </tr>
+
+    <tbody id="myTable">
+        
+    </tbody>
+</table>
+
+<script>
+	var myArray = [
+    
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Astrid_Legros",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "1"
+    },
+    {
+        "OS_Type": "ullam",
+        "Date_And_Time": "2080-01-15T14:20:17.172Z",
+        "Endpoint_Name": "molestiae",
+        "User_Name": "Celine.Weber55",
+        "Software_Name": "dolores",
+        "Activity": "est",
+        "id": "2"
+    },
+    {
+        "OS_Type": "rerum",
+        "Date_And_Time": "2056-12-11T14:02:58.343Z",
+        "Endpoint_Name": "ipsam",
+        "User_Name": "Michele.Bailey33",
+        "Software_Name": "impedit",
+        "Activity": "commodi",
+        "id": "3"
+    },
+    {
+        "OS_Type": "mac",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "endpoint_01",
+        "User_Name": "Fahad",
+        "Software_Name": "Git",
+        "Activity": "Installed",
+        "id": "4"
+    },
+    {
+        "OS_Type": "autem",
+        "Date_And_Time": "2058-01-03T13:48:51.167Z",
+        "Endpoint_Name": "et",
+        "User_Name": "Maymie.Kunde",
+        "Software_Name": "qui",
+        "Activity": "ratione",
+        "id": "13"
+    },
+    {
+        "OS_Type": "mollitia",
+        "Date_And_Time": "2023-07-14T14:39:15.337Z",
+        "Endpoint_Name": "consequatur",
+        "User_Name": "Alvah74",
+        "Software_Name": "et",
+        "Activity": "dolorem",
+        "id": "17"
+    },
+    {
+        "OS_Type": "tempora",
+        "Date_And_Time": "2056-08-26T03:52:28.447Z",
+        "Endpoint_Name": "corporis",
+        "User_Name": "Bulah95",
+        "Software_Name": "iste",
+        "Activity": "eaque",
+        "id": "18"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.4 LTS",
+        "Date_And_Time": "2022-10-07  15:06:31",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "apache2:amd64",
+        "Activity": "installed",
+        "id": "20"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "2062-10-24T16:48:37.567Z",
+        "Endpoint_Name": "minima",
+        "User_Name": "Elian67",
+        "Software_Name": "aut",
+        "Activity": "quasi",
+        "id": "21"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.4 LTS",
+        "Date_And_Time": "2022-10-07  15:06:31",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "apache2:amd64",
+        "Activity": "installed",
+        "id": "22"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.4 LTS",
+        "Date_And_Time": "2022-10-07  16:06:36",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "libmono-system-xml4.0-cil:amd64",
+        "Activity": "installed",
+        "id": "23"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.4 LTS",
+        "Date_And_Time": "2022-10-07  16:06:36",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "libmono-system-xml4.0-cil:amd64",
+        "Activity": "installed",
+        "id": "24"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.4 LTS",
+        "Date_And_Time": "2022-10-07  17:05:06",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "pinta:amd64",
+        "Activity": "remove",
+        "id": "25"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.6 LTS",
+        "Date_And_Time": "2022-10-07  17:59:47",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "libgcc-7-dev:amd64",
+        "Activity": "installed",
+        "id": "26"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.6 LTS",
+        "Date_And_Time": "2022-10-07  17:59:47",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "libgcc-7-dev:amd64",
+        "Activity": "installed",
+        "id": "27"
+    },
+    {
+        "OS_Type": "Ubuntu 18.04.6 LTS",
+        "Date_And_Time": "2022-10-07  17:59:47",
+        "Endpoint_Name": "afour-virtual-machine",
+        "User_Name": "afour",
+        "Software_Name": "libgcc-7-dev:amd64",
+        "Activity": "installed",
+        "id": "28"
+    },
+    {
+        "OS_Type": "",
+        "Date_And_Time": "2022-10-11  14:51:41",
+        "Endpoint_Name": "A4G583-PC",
+        "User_Name": "dhanrajs",
+        "Software_Name": "net-tools:amd64",
+        "Activity": "installed",
+        "id": "30"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Aniket",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "37"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Aniket",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "38"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Amit",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "39"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Aniket",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "40"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Aniket",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "41"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Amit",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "42"
+    },
+    {
+        "OS_Type": "odio",
+        "Date_And_Time": "1999-03-29T15:59:17.083Z",
+        "Endpoint_Name": "aut",
+        "User_Name": "Aniket",
+        "Software_Name": "quis",
+        "Activity": "libero",
+        "id": "43"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "44"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "45"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "46"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "47"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "48"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "49"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "50"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "51"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "Removed",
+        "id": "52"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "Removed",
+        "id": "53"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "Removed",
+        "id": "54"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "shc-4.0.3-1.el7.x86_64",
+        "Activity": "installed",
+        "id": "55"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "shc-4.0.3-1.el7.x86_64",
+        "Activity": "installed",
+        "id": "56"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "cpp-4.8.5-44.el7.x86_64",
+        "Activity": "installed",
+        "id": "57"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "kernel-headers-3.10.0-1160.76.1.el7.x86_64",
+        "Activity": "installed",
+        "id": "58"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "glibc-devel-2.17-326.el7_9.x86_64",
+        "Activity": "installed",
+        "id": "59"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "gcc-4.8.5-44.el7.x86_64",
+        "Activity": "installed",
+        "id": "60"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "gcc-4.8.5-44.el7.x86_64",
+        "Activity": "installed",
+        "id": "61"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "Removed",
+        "id": "62"
+    },
+    {
+        "OS_Type": "CentOS Linux 7 (Core)",
+        "Date_And_Time": "Nov",
+        "Endpoint_Name": "localhost.localdomain",
+        "User_Name": "root",
+        "Software_Name": "teams-1.4.00.7556-1.x86_64",
+        "Activity": "installed",
+        "id": "63"
+    }
+]	
+	
+	buildTable(myArray)
+
+
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+							<td>${data[i].OS_Type}</td>
+							<td>${data[i].Date_And_Time}</td>
+							<td>${data[i].Endpoint_Name}</td>
+                            <td>${data[i].User_Name}</td>
+							<td>${data[i].Software_Name}</td>
+							<td>${data[i].Activity}</td>
+                            <td>${data[i].id}</td>
+
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>
